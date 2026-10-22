@@ -5,3 +5,8 @@ python/dist/
 python/build/
 fortran/*.mod
 .idea/
+python/.venv/
+python/*.egg-info/
+python/.pytest_cache/
+python/.mypy_cache/
+python/.ruff_cache/
