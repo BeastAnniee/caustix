@@ -1,4 +1,4 @@
-"""Análisis de metadatos de empaquetado con distribuciones sintéticas (AC-13, AC-22)."""
+"""Análisis de metadatos de empaquetado con distribuciones sintéticas."""
 
 import importlib.util
 import io

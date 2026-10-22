@@ -8,7 +8,7 @@ nada de este directorio entra en el sdist ni en la wheel, e instalar o usar `cau
 | Archivo | Qué hace |
 |---|---|
 | `src/caustix_rk4.f90` | Módulo con el RK4, la interpolación de Hermite y la bisección acotada (60 iteraciones). |
-| `app/verify.f90` | Comprueba la caída con arrastre contra su solución analítica y el orden de convergencia (AC-5, AC-6, AC-9). |
+| `app/verify.f90` | Comprueba la caída con arrastre contra su solución analítica y el orden de convergencia. |
 | `app/gen_fixtures.f90` | Lee `cases.txt` y escribe la fixture CSV (17 cifras significativas). |
 | `cases.txt` | Casos de referencia (oblicuo 2D y 3D, caída; `dt` = 1e-2 y 1e-3). |
 | `tools/regen.py` | Compila (`gfortran -std=f2008 -O2 -ffp-contract=off -Wall -Werror`), ejecuta `verify`, regenera y compara. |

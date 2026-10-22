@@ -1,4 +1,4 @@
-"""Eventos de impacto y ápice por interpolación de Hermite (AC-7, AC-9)."""
+"""Eventos de impacto y ápice por interpolación de Hermite."""
 
 import math
 
@@ -66,7 +66,7 @@ def test_apex_height_converges_with_order_at_least_three() -> None:
     assert all(e > 1e-12 for e in errors_z)
     assert all(o >= 3.0 for o in observed_orders(errors_z)), observed_orders(errors_z)
     # El error del instante del ápice cambia de signo al refinar y roza el ruido de
-    # redondeo, así que solo se exige que converja (AC-9 pide el orden de la altura).
+    # redondeo, así que solo se exige que converja (el orden se comprueba sobre la altura).
     assert errors_t[-1] < errors_t[0] / 100.0
     assert errors_t[-1] < 1e-10
 

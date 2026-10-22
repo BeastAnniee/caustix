@@ -1,4 +1,4 @@
-"""Documentación de cada símbolo público y ejemplos ejecutables (AC-17, REQ-18)."""
+"""Documentación de cada símbolo público y ejemplos ejecutables."""
 
 import doctest
 import importlib

@@ -1,4 +1,4 @@
-"""Verifica el empaquetado de caustix antes de publicar (AC-13, AC-22).
+"""Verifica el empaquetado de caustix antes de publicar.
 
 Construye sdist y wheel en un directorio temporal, ejecuta ``twine check``, inspecciona los
 metadatos y el contenido, e instala la wheel en un venv limpio para importar ``caustix``.

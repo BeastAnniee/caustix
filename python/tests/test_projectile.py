@@ -1,4 +1,4 @@
-"""Tiro parabólico sin arrastre contra fórmulas cerradas (AC-3, AC-4, AC-10)."""
+"""Tiro parabólico sin arrastre contra fórmulas cerradas."""
 
 import math
 

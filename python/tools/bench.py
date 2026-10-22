@@ -1,6 +1,6 @@
 """Benchmark manual (no es parte del gate): tiempo de 10^4 pasos RK4 con arrastre.
 
-Objetivo informativo de la spec: < 1 s en un portátil actual. Uso (desde ``python/``)::
+Objetivo informativo: < 1 s en un portátil actual. Uso (desde ``python/``)::
 
     python tools/bench.py
 """

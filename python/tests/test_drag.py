@@ -1,4 +1,4 @@
-"""projectile_with_drag: límites, validación, límites de simulación (AC-8, AC-10, AC-12, AC-16)."""
+"""projectile_with_drag: límites, validación, límites de simulación."""
 
 import math
 from typing import Any
@@ -183,7 +183,7 @@ def test_invalid_vectors(p0: list[float], v0: list[float], name: str) -> None:
 @pytest.mark.parametrize("z0", [0.0, 1e-3])
 @pytest.mark.parametrize("dt", [0.21, 0.5, 1.0])
 def test_coarse_dt_longer_than_flight_time_locates_the_real_impact(z0: float, dt: float) -> None:
-    """Review 1: con dt > tiempo de vuelo el impacto no puede ser el redondeo a la malla."""
+    """Con dt > tiempo de vuelo el impacto no puede ser el redondeo a la malla."""
     kwargs: dict[str, Any] = {**BODY, "t_max": 5.0, "max_steps": 10**8}
     p0, v0 = [0.0, z0], [10.0, 1.0]
     ref = projectile_with_drag(p0, v0, dt=1e-4, **kwargs)
@@ -221,7 +221,7 @@ def test_exact_landing_after_initial_ascent(dim: int, ground: float, dt: float) 
     assert tr.hit_ground is True
     assert tr.time_of_flight == pytest.approx(4.0, abs=1e-12)
     assert tr.position[-1, -1] == ground
-    # REQ-10/REQ-12: t estrictamente creciente y misma malla que la solución en el vacío.
+    # t estrictamente creciente y misma malla que la solución en el vacío.
     assert np.all(np.diff(tr.t) > 0.0)
     free = projectile(p0, v0, dt=dt, g=10.0, ground=ground)
     assert tr.t.shape == free.t.shape
@@ -251,7 +251,7 @@ def test_step_budget_is_checked_even_when_launched_on_the_ground_going_down() ->
 
 
 def test_zero_gravity_body_resting_on_ground_does_not_land() -> None:
-    # g = 0 y vz = 0: nada lo empuja hacia el suelo; no hay impacto (§5 de la spec).
+    # g = 0 y vz = 0: nada lo empuja hacia el suelo; no hay impacto.
     tr = projectile_with_drag([0.0, 0.0], [1.0, 0.0], dt=0.1, t_max=1.0, **{**NO_DRAG, "g": 0.0})
     assert tr.hit_ground is False
     assert tr.t[-1] == pytest.approx(1.0)
@@ -295,7 +295,7 @@ def test_zero_drag_never_trips_the_stability_check() -> None:
     assert tr.hit_ground is True
 
 
-# --- Review ronda 4: aterrizaje sobre la malla con dt no dyádico (#1, #3) y estabilidad (#2) ---
+# --- Aterrizaje sobre la malla con dt no dyádico y estabilidad ---
 
 GRID_DTS = [0.01, 0.05, 0.1, 0.2, 0.3]
 
@@ -329,7 +329,7 @@ LIGHT: dict[str, Any] = {"mass": 0.001, "rho": 1.2, "cd": 1.0, "area": 0.01, "t_
 
 @pytest.mark.parametrize("dt", [0.2, 0.22, 0.25])
 def test_stiff_dt_is_rejected_even_when_computed_speed_is_low(dt: float) -> None:
-    # k = 6, v_t = 1,28 m/s: 2·k·v_t·dt > 2,78 aunque la |v| calculada sea baja (review #2).
+    # k = 6, v_t = 1,28 m/s: 2·k·v_t·dt > 2,78 aunque la |v| calculada sea baja.
     with pytest.raises(IntegrationError, match="dt"):
         projectile_with_drag([0.0, 100.0], [0.0, 0.0], dt=dt, **LIGHT)
 

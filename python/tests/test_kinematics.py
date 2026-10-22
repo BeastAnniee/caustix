@@ -1,4 +1,4 @@
-"""MRU y MRUA contra sus fórmulas cerradas (AC-1, AC-2, AC-10)."""
+"""MRU y MRUA contra sus fórmulas cerradas."""
 
 import dataclasses
 import math

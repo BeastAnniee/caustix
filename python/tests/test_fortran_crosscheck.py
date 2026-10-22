@@ -1,4 +1,4 @@
-"""Contraste de projectile_with_drag contra las fixtures del validador Fortran (AC-20).
+"""Contraste de projectile_with_drag contra las fixtures del validador Fortran.
 
 No necesita gfortran: lee las fixtures versionadas (regenerarlas: ``fortran/tools/regen.py``).
 """

@@ -1,4 +1,4 @@
-"""Superficie pública congelada (AC-15, ADR-0003)."""
+"""Superficie pública congelada."""
 
 import inspect
 

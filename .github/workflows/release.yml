@@ -28,7 +28,7 @@ jobs:
       - name: Pruebas
         working-directory: python
         run: python -m pytest -q
-      - name: Verificar el empaquetado (AC-13, AC-22)
+      - name: Verificar el empaquetado
         working-directory: python
         run: python tools/check_dist.py
       - name: Exigir que la etiqueta vX.Y.Z coincida con __version__ (PyPI)

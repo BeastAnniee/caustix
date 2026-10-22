@@ -1,4 +1,4 @@
-"""Pruebas del esqueleto del paquete (REQ-4, REQ-5, REQ-17)."""
+"""Pruebas del esqueleto del paquete."""
 
 import subprocess
 import sys

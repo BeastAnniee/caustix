@@ -1,4 +1,4 @@
-"""Trajectory: inmutabilidad, energías y derivados (AC-16)."""
+"""Trajectory: inmutabilidad, energías y derivados."""
 
 import dataclasses
 import math

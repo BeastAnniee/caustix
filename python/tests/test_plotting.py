@@ -1,4 +1,4 @@
-"""Graficado opcional de trayectorias (AC-14, AC-18)."""
+"""Graficado opcional de trayectorias."""
 
 import subprocess
 import sys

@@ -8,17 +8,17 @@ oblique3d_dt1e-2 3 2.5 1.225 0.47 0.02 9.80665 0.5 1.0e-2 600.0 5 0.0 0.0 2.0 20
 oblique3d_dt1e-3 3 2.5 1.225 0.47 0.02 9.80665 0.5 1.0e-3 600.0 50 0.0 0.0 2.0 20.0 12.0 30.0
 fall_dt1e-2 2 1.0 1.225 0.47 0.01 9.80665 0.0 1.0e-2 600.0 5 0.0 100.0 0.0 0.0
 fall_dt1e-3 2 1.0 1.225 0.47 0.01 9.80665 0.0 1.0e-3 600.0 50 0.0 100.0 0.0 0.0
-# Review 1: dt mayor que el tiempo de vuelo (parte del suelo; el primer paso ya cae bajo el suelo)
+# dt mayor que el tiempo de vuelo (parte del suelo; el primer paso ya cae bajo el suelo)
 coarse_dt0.21_ground 2 1.0 1.225 0.47 0.01 9.80665 0.0 0.21 5.0 1 0.0 0.0 10.0 1.0
 coarse_dt0.5_ground 2 1.0 1.225 0.47 0.01 9.80665 0.0 0.5 5.0 1 0.0 0.0 10.0 1.0
-# Review 2: aterrizaje exacto sobre una muestra de la malla (rho=0, g=10, dt potencia de 2)
+# aterrizaje exacto sobre una muestra de la malla (rho=0, g=10, dt potencia de 2)
 exact_landing_dt0.5 2 1.0 0.0 1.0 1.0 10.0 0.0 0.5 5.0 1 0.0 5.0 1.0 0.0
 exact_landing_dt1 2 1.0 0.0 1.0 1.0 10.0 0.0 1.0 5.0 1 0.0 5.0 1.0 0.0
 exact_ascent_dt0.5 2 1.0 0.0 1.0 1.0 10.0 0.0 0.5 10.0 1 0.0 0.0 1.0 20.0
 exact_ascent3d_ground3_dt0.5 3 1.0 0.0 1.0 1.0 10.0 3.0 0.5 10.0 1 0.0 0.0 3.0 1.0 0.0 20.0
-# Review 3: aterrizaje exacto justo en t_max (cuenta como impacto; sin muestra duplicada)
+# aterrizaje exacto justo en t_max (cuenta como impacto; sin muestra duplicada)
 exact_landing_tmax_dt0.5 2 1.0 0.0 1.0 1.0 10.0 0.0 0.5 1.0 1 0.0 5.0 1.0 0.0
-# Review 4: aterrizaje sobre la malla con dt no dyadico (residuo de redondeo; sin muestra duplicada)
+# aterrizaje sobre la malla con dt no dyadico (residuo de redondeo; sin muestra duplicada)
 exact_landing_dt0.1 2 1.0 0.0 1.0 1.0 10.0 0.0 0.1 5.0 1 0.0 5.0 1.0 0.0
 exact_landing_dt0.05 2 1.0 0.0 1.0 1.0 10.0 0.0 0.05 5.0 1 0.0 5.0 1.0 0.0
 exact_landing_tmax_dt0.1 2 1.0 0.0 1.0 1.0 10.0 0.0 0.1 1.0 1 0.0 5.0 1.0 0.0

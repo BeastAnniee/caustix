@@ -1,4 +1,4 @@
-"""Validación en el borde (REQ-14, AC-10)."""
+"""Validación en el borde."""
 
 import math
 

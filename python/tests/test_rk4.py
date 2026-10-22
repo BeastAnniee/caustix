@@ -1,4 +1,4 @@
-"""Núcleo RK4 contra la solución analítica de la caída con arrastre (AC-5, AC-6, AC-11, AC-12)."""
+"""Núcleo RK4 contra la solución analítica de la caída con arrastre."""
 
 import math
 from collections.abc import Callable
