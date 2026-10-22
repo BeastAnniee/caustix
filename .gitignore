@@ -1,0 +1,7 @@
+
+__pycache__/
+*.pyc
+python/dist/
+python/build/
+fortran/*.mod
+.idea/
