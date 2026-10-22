@@ -1,7 +1,7 @@
 # Validador Fortran (solo desarrollo)
 
 Implementación **independiente** del RK4 con arrastre cuadrático y del evento de impacto/ápice de
-`caustix`. Sirve para contrastar el código Python (REQ-20 a REQ-22; ADR-0005). **No se publica**:
+`caustix`. Sirve para contrastar el código Python. **No se publica**:
 nada de este directorio entra en el sdist ni en la wheel, e instalar o usar `caustix` no requiere
 `gfortran`.
 
@@ -24,8 +24,8 @@ python tools/regen.py --write   # sobrescribe la fixture versionada
 ```
 
 Si falta `gfortran`, el script termina con código 2 y un mensaje claro: nunca se omite en silencio.
-Quien no tenga `gfortran` puede ejecutar el gate solo del paquete con
-`node scripts/tc-verify.mjs --component=app`.
+Quien no tenga `gfortran` puede ejecutar solo las pruebas del paquete desde `python/`
+con `python -m pytest -q`.
 
 ## Regenerar las fixtures
 

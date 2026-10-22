@@ -1,5 +1,5 @@
 ! Verifica el RK4 en Fortran contra la solucion analitica de la caida con arrastre
-! cuadratico y comprueba su orden de convergencia (AC-5, AC-6, AC-9 de la spec 001).
+! cuadratico y comprueba su orden de convergencia.
 program verify
   use caustix_rk4, only: wp, simulate, status_ok
   implicit none
