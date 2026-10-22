@@ -1,0 +1,74 @@
+[build-system]
+requires = ["hatchling>=1.27,<1.29"]
+build-backend = "hatchling.build"
+
+[project]
+name = "caustix"
+dynamic = ["version"]
+description = "Física en Python: cinemática y trayectorias (MRU, MRUA, tiro parabólico con y sin arrastre)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Aldair Nava" }]
+keywords = ["physics", "kinematics", "projectile", "rk4", "education"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Typing :: Typed",
+]
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+plot = ["matplotlib"]
+
+[dependency-groups]
+dev = [
+    "pytest~=8.3",
+    "ruff~=0.8",
+    "mypy~=1.13",
+    "build~=1.2",
+    "twine~=6.0",
+    "matplotlib~=3.9",
+]
+
+[tool.hatch.version]
+path = "src/caustix/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/caustix"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/caustix", "tests", "tools", "README.md", "LICENSE", "CHANGELOG.md", "pyproject.toml"]
+exclude = ["tests/fixtures/fortran_rk4.csv", "tests/test_fortran_crosscheck.py"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests", "tools"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "N", "D"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["D"]
+"tools/**" = ["D"]
+
+[tool.mypy]
+strict = true
+files = ["src", "tests", "tools"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-markers"
+testpaths = ["tests"]
