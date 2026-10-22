@@ -1,23 +1,23 @@
-## Qué y por qué
-<!-- 2-3 líneas. -->
+## Resumen
+<!-- Qué hace este PR, en 1-3 frases. Closes #123 si aplica. -->
 
-**Spec:** `docs/specs/NNN-slug/spec.md` · **Riesgo:** R? · **Componentes:** …
+## Motivación
+<!-- Por qué hace falta: el problema o la necesidad, no la historia del trabajo. -->
 
-## Evidencia
-- Gate: `node scripts/tc-verify.mjs --all` → **PASS** (commit `<sha>`, salida en `validation.md`)
-- Validación por criterio: `docs/specs/NNN-slug/validation.md`
-- Review independiente: `docs/specs/NNN-slug/review.md` → sin BLOCKER/MAJOR abiertos
+## Cambios
+<!-- Lista corta de lo que cambia, desde el punto de vista de quien usa o mantiene la librería. -->
+-
 
-## Gates manuales pendientes (R3 / PLC / planta)
-- [ ] Simulación / FAT con evidencia adjunta
-- [ ] Segundo revisor con conocimiento del proceso
-- [ ] Plan de puesta en marcha y rollback aprobado
+## Cambios incompatibles
+<!-- Cambios de API pública o de comportamiento. Si no hay, escribe «Ninguno». -->
+Ninguno.
 
-## Despliegue y vuelta atrás
-<!-- Cómo se despliega, cómo se revierte, quién ejecuta en entorno real. -->
+## Pruebas
+<!-- Qué se probó y cómo reproducirlo. -->
+- [ ] `python -m ruff check . && python -m mypy . && python -m pytest -q` (en `python/`)
+- [ ] Tests nuevos o actualizados para el comportamiento cambiado
+- [ ] Docs / README / CHANGELOG actualizados si cambia la API
 
-## Revisores requeridos por riesgo
-R1: 1 · R2: 1 + review de IA · R3: 2 (uno del proceso)
+## Notas para quien revisa
+<!-- Decisiones de diseño, alternativas descartadas, pendientes conocidos, puntos donde mirar con cuidado. Opcional. -->
 
-## Checklist del autor
-- [ ] Sin secretos ni TODO/debug residuales · [ ] Docs/ADR al día · [ ] Divergencias del plan anotadas
